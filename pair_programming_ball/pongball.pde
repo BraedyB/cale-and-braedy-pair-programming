@@ -27,10 +27,10 @@ class PongBall {
   }
   
   void bounceIfNeeded(){
-    if ((x+rad > width) || (x-rad <0)){
+    if ((x+rad > rectH) || (x-rad <0)){
       dx*= -1;
     }
-    if ((y+rad > height) || (y-rad <0)){
+    if ((y+rad > rectH) || (y-rad <0)){
       dy*= -1;
     }
   }
