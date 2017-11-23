@@ -21,36 +21,37 @@ class Paddle {
   //behave... you monkey.
   //shows paddles
   void display() {
+    rectMode(CENTER);
     fill(255);
-    rect(x + 300, y - 50, 20, 100);
-    rect(x2 - 300, y2 - 50, 20, 100);
+    rect(x + 300, y, 20, 100);
+    rect(x2 - 300, y2 , 20, 100);
   }
   //movement
   void move() {
-    if (movingUp) {
+    if (movingUp && y > 50) {
       y -= dy;
     }
-    if (movingDown) {
+    if (movingDown&& y < height - 50) {
       y += dy;
     }
-    if (movingUp2) {
+    if (movingUp2 && y2 > 50) {
       y2 -= dy;
     }
-    if (movingDown2) {
+    if (movingDown2 && y2 < height - 50) {
       y2 += dy;
     }
   }
     void handleKeyPressed() {
-    if (keyCode == UP) {
+    if (keyCode == UP ) {
       movingUp = true;
     }
-    if (keyCode == DOWN) {
+    if (keyCode == DOWN ) {
       movingDown = true;
     }
-    if (key == 'w' || key == 'W') {
+    if (key == 'w' || key == 'W' ) {
       movingUp2 = true;
     }
-    if (key == 's' || key == 'S') {
+    if (key == 's' || key == 'S' ) {
       movingDown2 = true;
     }
   }
