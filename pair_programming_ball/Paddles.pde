@@ -22,6 +22,7 @@ class Paddle {
   //shows paddles
   void display() {
     rectMode(CENTER);
+    noStroke();
     fill(255);
     rect(x + 300, y, 20, 100);
     rect(x2 - 300, y2 , 20, 100);

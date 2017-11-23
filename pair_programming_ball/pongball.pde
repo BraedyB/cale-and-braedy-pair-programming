@@ -16,6 +16,7 @@ class PongBall {
   
   //behaviours//
   void display(){
+    noStroke();
     fill(255);
     ellipse(x,y,rad*2,rad*2);
   }
