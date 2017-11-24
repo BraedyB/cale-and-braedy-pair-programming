@@ -1,7 +1,7 @@
 class PongBall {
 
   //data//
-  float x, y, dx, dy, rad, collideRight;
+  float x, y, dx, dy, rad;
 
 
   //constructors//
@@ -25,7 +25,7 @@ class PongBall {
   void move() {
     x += dx;
     y += dy;
-    hitPaddle();
+    hitPaddles();
     bounceIfNeeded();
   }
 
@@ -37,35 +37,41 @@ class PongBall {
     if ( (y > height - rad/2) || (y < 0 + rad/2) ) {
       dy *= -1;
     }
-  }
-  void hitPaddle() {
-    boolean hit = circleRect(x, y, rad, paddles.x, paddles.y, paddles.rw, paddles.rh);
     if (hit) {
       dx *= -1;
       dy *= -1;
     }
+  }
+  void hitPaddles() {
+    boolean hit = circleRect(x, y, rad, paddles.x, paddles.y, paddles.rw, paddles.rh);
     // CIRCLE/RECTANGLE
-    boolean circleRect(x, y, rad, paddles.x, paddles.y, rw, rh) {
+    boolean circleRect(x, y, rad, paddles.x, paddles.y, paddles.rw, paddles.rh)
 
-      // temporary variables to set edges for testing
       float testX = cx;
       float testY = cy;
 
       // which edge is closest?
-      if (cx < rx)         testX = rx;      // test left edge
-      else if (cx > rx+rw) testX = rx+rw;   // right edge
-      if (cy < ry)         testY = ry;      // top edge
-      else if (cy > ry+rh) testY = ry+rh;   // bottom edge
+      if (x < paddles.x) {
+        testX = paddles.x;      // test left edge
+      } else if (x > paddles.x + paddles.rw) {
+        testX = paddles.x + paddles.rw;   // right edge
+      }
+      if (y < paddles.y) {      
+        testY = paddles.y;      // top edge
+      } else if (y > paddles.y + paddles.rh) {
+        testY = paddles.y + paddles.rh;   // bottom edge
+      }
 
       // get distance from closest edges
-      float distX = cx-testX;
-      float distY = cy-testY;
+      float distX = x - paddles.x;
+      float distY = y - paddles.y;
       float distance = sqrt( (distX*distX) + (distY*distY) );
 
       // if the distance is less than the radius, collision!
-      if (distance <= radius) {
+      if (distance <= rad) {
         return true;
       }
       return false;
     }
   }
+}
