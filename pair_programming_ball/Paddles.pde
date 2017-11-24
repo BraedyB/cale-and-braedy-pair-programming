@@ -1,6 +1,6 @@
 class Paddle {
   //data
-  float x, y, x2, y2; 
+  float x, y, x2, y2, rw, rh; 
   float dx, dy;
   boolean movingUp, movingUp2, movingDown, movingDown2;
   //constructors
@@ -12,6 +12,8 @@ class Paddle {
     y2 = height/2;
     dx = 5;
     dy = 5;
+    rw = 20;
+    rh = 100;
     //motion control
     movingUp = false;
     movingUp2 = false;
@@ -24,8 +26,8 @@ class Paddle {
     rectMode(CENTER);
     noStroke();
     fill(255);
-    rect(x + 300, y, 20, 100);
-    rect(x2 - 300, y2, 20, 100);
+    rect(x + 300, y, rw, rh);
+    rect(x2 - 300, y2, rw, rh);
   }
   //movement
   void move() {
