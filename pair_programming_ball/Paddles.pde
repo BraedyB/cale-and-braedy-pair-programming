@@ -25,7 +25,7 @@ class Paddle {
     noStroke();
     fill(255);
     rect(x + 300, y, 20, 100);
-    rect(x2 - 300, y2 , 20, 100);
+    rect(x2 - 300, y2, 20, 100);
   }
   //movement
   void move() {
@@ -42,7 +42,7 @@ class Paddle {
       y2 += dy;
     }
   }
-    void handleKeyPressed() {
+  void handleKeyPressed() {
     if (keyCode == UP ) {
       movingUp = true;
     }
