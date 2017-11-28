@@ -6,9 +6,9 @@ class Paddle {
   //constructors
   Paddle() {
     //location and speed
-    x = width/2;
+    x = width/2 + 300;
     y = height/2;
-    x2 = width/2;
+    x2 = width/2 - 300;
     y2 = height/2;
     dx = 5;
     dy = 5;
@@ -26,8 +26,8 @@ class Paddle {
     rectMode(CENTER);
     noStroke();
     fill(255);
-    rect(x + 300, y, rw, rh);
-    rect(x2 - 300, y2, rw, rh);
+    rect(x, y, rw, rh);
+    rect(x2, y2, rw, rh);
   }
   //movement
   void move() {
