@@ -23,7 +23,6 @@ class Paddle {
   //behave... you monkey.
   //shows paddles
   void display() {
-    rectMode(CENTER);
     noStroke();
     fill(255);
     rect(x, y, rw, rh);
@@ -31,16 +30,16 @@ class Paddle {
   }
   //movement
   void move() {
-    if (movingUp && y > 50) {
+    if (movingUp && y > 0) {
       y -= dy;
     }
-    if (movingDown&& y < height - 50) {
+    if (movingDown&& y < height - 100) {
       y += dy;
     }
-    if (movingUp2 && y2 > 50) {
+    if (movingUp2 && y2 > 0) {
       y2 -= dy;
     }
-    if (movingDown2 && y2 < height - 50) {
+    if (movingDown2 && y2 < height - 100) {
       y2 += dy;
     }
   }

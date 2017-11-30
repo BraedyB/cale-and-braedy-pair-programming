@@ -34,12 +34,16 @@ class PongBall {
     float _testY = y;
     
     if ( (x > width - rad/2) || (x < 0 + rad/2) ) {
+      x = width/2;
+      y = height/2;
       dx *= -1;
     }
 
     if ( (y > height - rad/2) || (y < 0 + rad/2) ) {
       dy *= -1;
     }
+    
+    
     if (x < paddles.x) {
       testX = paddles.x;
     } 
