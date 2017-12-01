@@ -37,6 +37,7 @@ class PongBall {
       x = width/2;
       y = height/2;
       dx *= -1;
+      score.scoreRight += 1;
     }
 
     if ( (y > height - rad/2) || (y < 0 + rad/2) ) {

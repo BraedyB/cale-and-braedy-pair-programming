@@ -1,6 +1,6 @@
 Paddle paddles;
-Score scoreR;
-Score scoreL;
+Score score;
+
 float rectX, rectY, rectH, rectW;
 PongBall b1;
 void setup() {
@@ -11,8 +11,8 @@ void setup() {
   size(800, 600);
   b1 = new PongBall(width/2, height/2, 2, 3, 13);
   paddles = new Paddle();
-  scoreR = new Score();
-  scoreL = new Score();
+  score = new Score();
+
 }
 void draw() {
   background (0);
@@ -21,8 +21,8 @@ void draw() {
 
   paddles.display();
   b1.display();
-  scoreR.scoreRightSide();
-  scoreL.scoreLeftSide();
+  score.scoreRightSide();
+  score.scoreLeftSide();
   //rectMode(CENTER);
   //noStroke();
   //rect(rectX, rectY/10-10, rectW,rectH);

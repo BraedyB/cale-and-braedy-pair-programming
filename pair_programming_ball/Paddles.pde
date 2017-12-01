@@ -6,7 +6,7 @@ class Paddle {
   //constructors
   Paddle() {
     //location and speed
-    x = width/2 + 300;
+    x = width/2 + 280;
     y = height/2;
     x2 = width/2 - 300;
     y2 = height/2;
