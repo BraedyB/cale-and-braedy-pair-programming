@@ -33,7 +33,13 @@ class PongBall {
     float _testX = x;
     float _testY = y;
     
-    if ( (x > width - rad/2) || (x < 0 + rad/2) ) {
+    if ( (x > width - rad/2) ) {
+      x = width/2;
+      y = height/2;
+      dx *= -1;
+      score.scoreLeft += 1;
+    }
+    if ( (x < 0 + rad/2) ) {
       x = width/2;
       y = height/2;
       dx *= -1;

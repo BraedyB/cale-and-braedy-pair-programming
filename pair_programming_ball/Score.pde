@@ -5,7 +5,7 @@ class Score {
   Score() {
     x = width/2 + 300;
     y = 30;
-    x2 = width/2 - 300;
+    x2 = width/2 - 315;
     y = 30;
     scoreLeft = 0;
     scoreRight = 0;
@@ -15,17 +15,15 @@ class Score {
   }
   
   void scoreRightSide() {
-    textMode(CENTER);
     textSize(20);
     fill(255);
     text(scoreRight, x, y);
   }
   
   void scoreLeftSide() {
-    textMode(CENTER);
     textSize(20);
     fill(255);
-    text(scoreLeft, x2, y2);
+    text(scoreLeft, x2, 30);
     
   }
   
