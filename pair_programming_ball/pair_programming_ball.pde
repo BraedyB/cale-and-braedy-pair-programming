@@ -2,6 +2,7 @@ Paddle paddles;
 Score score;
 
 float rectX, rectY, rectH, rectW;
+int state;
 PongBall b1;
 void setup() {
   //rectX = width/2;
@@ -12,21 +13,30 @@ void setup() {
   b1 = new PongBall(width/2, height/2, 2, 3, 13);
   paddles = new Paddle();
   score = new Score();
+  
+  state = 1;
 
 }
 void draw() {
-  background (0);
-  b1.move();
-  paddles.move();
+  if (state == 0) {
+    
+  }
+  
+  
+  if (state == 1) {
+    background (0);
+    b1.move();
+    paddles.move();
 
-  paddles.display();
-  b1.display();
-  score.scoreRightSide();
-  score.scoreLeftSide();
-  //rectMode(CENTER);
-  //noStroke();
-  //rect(rectX, rectY/10-10, rectW,rectH);
-  //rect(rectX, rectY-50, rectW,rectH);
+    paddles.display();
+    b1.display();
+    score.scoreRightSide();
+    score.scoreLeftSide();
+    //rectMode(CENTER);
+    //noStroke();
+    //rect(rectX, rectY/10-10, rectW,rectH);
+    //rect(rectX, rectY-50, rectW,rectH);
+  }
 }
 void keyPressed() {
   paddles.handleKeyPressed();
