@@ -25,6 +25,7 @@ class Paddle {
   void display() {
     noStroke();
     fill(255);
+    rectMode(CORNER);
     rect(x, y, rw, rh);
     rect(x2, y2, rw, rh);
   }

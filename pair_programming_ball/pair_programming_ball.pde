@@ -1,5 +1,6 @@
 Paddle paddles;
 Score score;
+Button normalGame;
 
 float rectX, rectY, rectH, rectW;
 int state;
@@ -13,13 +14,15 @@ void setup() {
   b1 = new PongBall(width/2, height/2, 2, 3, 13);
   paddles = new Paddle();
   score = new Score();
+  normalGame = new Button();
   
-  state = 1;
+  state = 0;
 
 }
 void draw() {
   if (state == 0) {
-    
+    background(0);
+    normalGame.classicMode();
   }
   
   
