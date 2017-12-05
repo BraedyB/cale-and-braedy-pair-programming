@@ -40,6 +40,22 @@ void draw() {
     //rect(rectX, rectY/10-10, rectW,rectH);
     //rect(rectX, rectY-50, rectW,rectH);
   }
+  if (state == 2) {
+    background (0);
+    b1.pickFlicker();
+    b1.ballFlicker();
+    b1.move();
+    paddles.move();
+
+    paddles.display();
+    b1.display();
+    score.scoreRightSide();
+    score.scoreLeftSide();
+    //rectMode(CENTER);
+    //noStroke();
+    //rect(rectX, rectY/10-10, rectW,rectH);
+    //rect(rectX, rectY-50, rectW,rectH);
+  }
 }
 void keyPressed() {
   paddles.handleKeyPressed();

@@ -2,7 +2,9 @@ class PongBall {
 
   //data//
   float x, y, dx, dy, rad;
-
+  float pick;
+  float greyBoy;
+  float bColor = 255;
 
   //constructors//
   PongBall(float x, float y, float dx, float dy, float rad) {
@@ -17,7 +19,7 @@ class PongBall {
   //behaviours//
   void display() {
     noStroke();
-    fill(255);
+    fill(bColor);
     ellipse(x, y, rad*2, rad*2);
   }
 
@@ -25,6 +27,22 @@ class PongBall {
     x += dx;
     y += dy;
     bounceIfNeeded();
+  }
+  void pickFlicker(){
+    pick = random(1,2);
+    if (pick >= 1){
+      greyBoy = -50;
+    }else{
+      greyBoy = 50;
+    }
+  }
+  void ballFlicker(){
+    greyBoy = 50;
+      
+    int m = millis();
+    bColor = ((m % 100) - greyBoy);
+    
+    
   }
 
   void bounceIfNeeded() {
