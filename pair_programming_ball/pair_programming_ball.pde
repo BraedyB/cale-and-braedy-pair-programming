@@ -1,3 +1,17 @@
+///MULTIPONG
+///CODED BY BRAEDY B AND CALE L
+///SCHELLENBERG CS30
+///PERIOD 4
+////
+///KNOWN ISSUES
+//-hit detection on top/bottom of paddle is "iffy" 
+//-ball gets caught on face and moves along paddle until exiting the paddle.
+////
+///FUTURE ADDITIONS/IMPROVEMENTS
+//-sound fx for impacts
+//-classic atari soundtrack
+////
+
 //classes
 Paddle paddles;
 Score score;
