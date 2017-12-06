@@ -1,4 +1,4 @@
-class Paddle {
+class Paddle { //CL did all
   //data
   float x, y, x2, y2, rw, rh; 
   float dx, dy;

@@ -1,4 +1,4 @@
-class Button {
+class Button { //CL (and a little by BB - fixed title)
   //data
   float x,y;
   
@@ -11,9 +11,11 @@ class Button {
   
   //displays the multi-pong title
   void title() {
+    textAlign(CENTER);
     textSize(50);
     fill(random(255),random(255),random(255));
-    text("Multi-pong!", width/2 - 125, 70); 
+    text("MULTIPONG", width/2, 90); 
+    textAlign(1);
   }
   
   //creates the button for the default pong game

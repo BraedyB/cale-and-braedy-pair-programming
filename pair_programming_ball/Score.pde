@@ -1,4 +1,4 @@
-class Score {
+class Score { //CL did all
   //data
   float x,y,x2,y2;
   int scoreLeft,scoreRight;

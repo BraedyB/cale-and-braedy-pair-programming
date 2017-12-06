@@ -12,17 +12,17 @@
 //-classic atari soundtrack
 ////
 
-//classes
+//classes BB
 Paddle paddles;
 Score score;
 Button buttons;
 PongBall b1;
 
-//global values
+//global values BB
 float rectX, rectY, rectH, rectW;
 int state;
 
-void setup() {
+void setup() { //BB
   size(800, 600);
   //creates new class
   b1 = new PongBall(width/2, height/2, 2, 3, 13);
@@ -33,7 +33,7 @@ void setup() {
   state = 0;
 }
 
-void draw() {
+void draw() { //BB & CL
   //main menu
   if (state == 0) {
     background(0);
@@ -43,7 +43,7 @@ void draw() {
     buttons.timedMode();
   }
   
-  //classic mode
+  //classic mode //CL
   if (state == 1) {
     background (0);
     b1.move();
@@ -55,7 +55,7 @@ void draw() {
     score.scoreLeftSide();
   }
   //Braedy's gamemode
-  if (state == 2) {
+  if (state == 2) { //BB
     background (0);
     b1.pickFlicker();
     b1.ballFlicker();
@@ -68,7 +68,7 @@ void draw() {
     score.scoreLeftSide();
   }
   //Cale's gamemode
-  if (state == 3) {
+  if (state == 3) { //CL
     background (0);
     b1.move();
     //stops paddle movement 175 pixels from center
@@ -83,7 +83,7 @@ void draw() {
   }
 }
 
-//detects if paddles need to be moved
+//detects if paddles need to be moved //CL
 void keyPressed() {
   paddles.handleKeyPressed();
 }

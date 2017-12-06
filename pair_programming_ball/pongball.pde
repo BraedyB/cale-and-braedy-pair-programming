@@ -1,4 +1,4 @@
-class PongBall {
+class PongBall { //BB did all except for hit detection and CL gamemode
 
   //data//
   float x, y, dx, dy, rad;
