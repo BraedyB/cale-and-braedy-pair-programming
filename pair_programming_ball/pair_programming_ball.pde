@@ -54,8 +54,17 @@ void draw() {
   }
   //Cale's gamemode
   if (state == 3) {
+    background (0);
+    b1.move();
     
+    if (b1.x > width/2 - 150 && b1.x < width/2 + 150) {
+      paddles.move();
+    }
     
+    paddles.display();
+    b1.display();
+    score.scoreRightSide();
+    score.scoreLeftSide();
   }
 }
 

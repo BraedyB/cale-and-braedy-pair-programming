@@ -63,7 +63,7 @@ class Button {
     rect(x,y + 100,100,50);
     textSize(20);
     fill(0);
-    text("Dodge",x - 30,y + 100); 
+    text("Timed",x - 30,y + 100); 
   }
   
 }
