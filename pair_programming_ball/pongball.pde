@@ -28,6 +28,7 @@ class PongBall {
     y += dy;
     bounceIfNeeded();
   }
+  
   void pickFlicker(){
     pick = random(1,2);
     if (pick >= 1){
@@ -36,13 +37,12 @@ class PongBall {
       greyBoy = 50;
     }
   }
+  
   void ballFlicker(){
     greyBoy = 50;
       
     int m = millis();
     bColor = ((m % 100) - greyBoy);
-    
-    
   }
 
   void bounceIfNeeded() {

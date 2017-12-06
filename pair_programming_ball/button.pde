@@ -1,12 +1,14 @@
 class Button {
+  //data
   float x,y;
   
+  //constructor
   Button() {
     x = width/2;
     y = height/2;
-    
-    
+
   }
+  
   //creates the button for the default pong game
   void classicMode() {
     rectMode(CENTER);
@@ -25,6 +27,7 @@ class Button {
     fill(0);
     text("Classic",x - 30,y - 100);
   }
+  
   //creates the button for Braedy's gamemode
   void flickerMode() {
     rectMode(CENTER);
@@ -43,6 +46,7 @@ class Button {
     fill(0);
     text("Flicker",x - 30,y);
   }
+  
   //creates button for Cale's gamemode
   void dodgeMode() {
     rectMode(CENTER);
