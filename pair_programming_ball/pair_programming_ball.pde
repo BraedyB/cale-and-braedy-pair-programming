@@ -56,8 +56,8 @@ void draw() {
   if (state == 3) {
     background (0);
     b1.move();
-    
-    if (b1.x > width/2 - 150 && b1.x < width/2 + 150) {
+    //stops paddle movement 175 pixels from center
+    if (b1.x > width/2 - 175 && b1.x < width/2 + 175) {
       paddles.move();
     }
     
