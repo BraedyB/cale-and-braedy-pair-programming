@@ -1,6 +1,6 @@
 Paddle paddles;
 Score score;
-Button normalGame;
+Button buttons;
 
 float rectX, rectY, rectH, rectW;
 int state;
@@ -14,18 +14,21 @@ void setup() {
   b1 = new PongBall(width/2, height/2, 2, 3, 13);
   paddles = new Paddle();
   score = new Score();
-  normalGame = new Button();
+  buttons = new Button();
   
   state = 0;
 
 }
 void draw() {
+  //main menu
   if (state == 0) {
     background(0);
-    normalGame.classicMode();
+    buttons.classicMode();
+    buttons.flickerMode();
+    buttons.dodgeMode();
   }
   
-  
+  //classic mode
   if (state == 1) {
     background (0);
     b1.move();
@@ -35,11 +38,8 @@ void draw() {
     b1.display();
     score.scoreRightSide();
     score.scoreLeftSide();
-    //rectMode(CENTER);
-    //noStroke();
-    //rect(rectX, rectY/10-10, rectW,rectH);
-    //rect(rectX, rectY-50, rectW,rectH);
   }
+  //Braedy's gamemode
   if (state == 2) {
     background (0);
     b1.pickFlicker();
@@ -51,10 +51,11 @@ void draw() {
     b1.display();
     score.scoreRightSide();
     score.scoreLeftSide();
-    //rectMode(CENTER);
-    //noStroke();
-    //rect(rectX, rectY/10-10, rectW,rectH);
-    //rect(rectX, rectY-50, rectW,rectH);
+  }
+  //Cale's gamemode
+  if (state == 3) {
+    
+    
   }
 }
 void keyPressed() {
