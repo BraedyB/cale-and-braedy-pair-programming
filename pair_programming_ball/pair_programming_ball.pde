@@ -25,7 +25,7 @@ void draw() {
     background(0);
     buttons.classicMode();
     buttons.flickerMode();
-    buttons.dodgeMode();
+    buttons.timedMode();
   }
   
   //classic mode
