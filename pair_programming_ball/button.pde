@@ -48,7 +48,7 @@ class Button {
   }
   
   //creates button for Cale's gamemode
-  void dodgeMode() {
+  void timedMode() {
     rectMode(CENTER);
     stroke(255);
     if (mouseX < 450 && mouseX > 350 && mouseY < 425 && mouseY > 375) {
