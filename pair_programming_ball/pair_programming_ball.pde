@@ -23,6 +23,7 @@ void draw() {
   //main menu
   if (state == 0) {
     background(0);
+    buttons.title();
     buttons.classicMode();
     buttons.flickerMode();
     buttons.timedMode();

@@ -9,6 +9,13 @@ class Button {
 
   }
   
+  //displays the multi-pong title
+  void title() {
+    textSize(50);
+    fill(random(255),random(255),random(255));
+    text("Multi-pong!", width/2 - 125, 70); 
+  }
+  
   //creates the button for the default pong game
   void classicMode() {
     rectMode(CENTER);

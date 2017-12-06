@@ -26,11 +26,4 @@ class Score {
     text(scoreLeft, x2, 30);
     
   }
-  
-  
-  
-  
-  
-  
-  
 }
