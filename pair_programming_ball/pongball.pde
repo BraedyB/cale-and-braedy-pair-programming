@@ -22,13 +22,15 @@ class PongBall {
     fill(bColor);
     ellipse(x, y, rad*2, rad*2);
   }
-
+  
+  //moves the ball
   void move() {
     x += dx;
     y += dy;
     bounceIfNeeded();
   }
   
+  //chooses whether or not the ball should be black or grey
   void pickFlicker(){
     pick = random(1,2);
     if (pick >= 1){
@@ -38,6 +40,7 @@ class PongBall {
     }
   }
   
+  //timer for the ball flicker
   void ballFlicker(){
     greyBoy = 50;
       
@@ -45,12 +48,16 @@ class PongBall {
     bColor = ((m % 100) - greyBoy);
   }
 
+  //checks if the ball needs to bounce
   void bounceIfNeeded() {
+    //data for paddle hit dectection
     float testX = x;
     float testY = y;
     float _testX = x;
     float _testY = y;
     
+    //checks if the ball has hit either side (if it has, adds a point to the respective side)
+    //right paddle
     if ( (x > width - rad/2) ) {
       x = width/2;
       y = height/2;
@@ -63,12 +70,13 @@ class PongBall {
       dx *= -1;
       score.scoreRight += 1;
     }
-
+    
+    //checks if the ball has hit the top or bottom of the screen
     if ( (y > height - rad/2) || (y < 0 + rad/2) ) {
       dy *= -1;
     }
     
-    
+    //checks if the ball has hit either of the paddles---------
     if (x < paddles.x) {
       testX = paddles.x;
     } 
@@ -81,10 +89,12 @@ class PongBall {
     else if (y > paddles.y+ paddles.rh) {
       testY = paddles.y + paddles.rh;
     }// bottom edge
+    
     float distX = x - testX;
     float distY = y - testY;
     float distance = sqrt( (distX * distX) + (distY * distY) );
     
+    //left paddle
     if (distance <= rad) {
       dx *= -1;
     }
@@ -109,5 +119,6 @@ class PongBall {
     if (_distance <= rad) {
       dx *= -1;
     }
+    //----------------------------------------------------------------
   }
 }
