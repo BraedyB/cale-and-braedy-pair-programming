@@ -86,9 +86,6 @@ void draw() { //BB & CL
 //detects if paddles need to be moved //CL
 void keyPressed() {
   paddles.handleKeyPressed();
-  if (key == 'r' || key == 'R') {
-    state = 0; 
-  }
 }
 
 void keyReleased() {
